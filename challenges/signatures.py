@@ -26,6 +26,7 @@ def length_extension():
             links=[('?tag={}&msg={}'.format(tag, hexmsg), msg.decode())],)
 
     else:
+
         msg = hex_to_raw(msg)
         d = {parameter.split('=')[0]:parameter.split('=')[1] for parameter in raw_to_ascii(msg).split('&')}
 

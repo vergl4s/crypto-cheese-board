@@ -1,3 +1,15 @@
-# cheese-selection
+# crypto-cheese-board
 
-Selection of vulnerable apps. Just run app.y after installing dependencies listed in requirements.txt.
+Selection of web pages with broken crypto.
+
+## Installing
+
+```bash
+pip install -r requirements.txt
+```
+
+## Running
+
+```bash
+./app.py <your-optional-ip>
+```
