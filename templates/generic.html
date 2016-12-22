@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+{% if background_color %}
+<body style="background-color: {{ background_color }}">
+{% else %}
+<body>
+{% endif %}
+<h1>{{ title }}</h1>
+{{ msg }}
+{% for href, msg in links %}
+<a href="{{ href }}">{{ msg }}</a>
+{% endfor %}
+
+{% if flag %}
+<h2> >>>> Here's your flag: {{ flag }} <<<<<h2>
+{% else %}
+    {% if flag_error %}
+    <p> {{ flag_error }} </p>
+    {% endif %}
+{% endif %}
+</body>
+</html>
