@@ -10,7 +10,7 @@ FLAG = 'Y SO SECRET?'
 def sign(msg):
     return hashlib.sha1(KEY + msg).hexdigest()
 
-def length_extension():
+def level1():
 
     msg = request.args.get('msg')
     tag = request.args.get('tag')

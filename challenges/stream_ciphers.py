@@ -9,21 +9,21 @@ FLAG1 = 'WHAT ARE WE HAVING FOR LUNCH?'
 FLAG2 = 'MERRY XMAS :)'
 TOKEN = 'username={}&admin=0&flag2='+FLAG2
 
-def rc4():
+def level1():
 
     if request.method == 'POST':
 
         username = request.form['username']
         cipher = ARC4.new(KEY)
         token = cipher.encrypt(TOKEN.format(username).encode())
-        return redirect(url_for('rc4', token=raw_to_hex(token)))
+        return redirect(url_for('stream_ciphers_level1', token=raw_to_hex(token)))
 
     elif request.method == 'GET':
 
         cpt = request.args.get('token', None)
 
         if cpt is None:
-            return render_template('single_input.html', title='RC4 token', msg='Please sign up:', action='/stream/rc4', input_msg='Username', input='username')
+            return render_template('single_input.html', title='RC4 token', msg='Please sign up:', action=url_for('stream_ciphers_level1'), input_msg='Username', input='username')
 
         else:
 

@@ -9,13 +9,21 @@ app = Flask(__name__)
 def main():
     return render_template('main.html')
 
-@app.route("/stream/rc4", methods=['POST', 'GET'])
-def rc4():
-	return challenges.stream_ciphers.rc4()
+@app.route("/stream/level1", methods=['GET', 'POST'])
+def stream_ciphers_level1():
+	return challenges.stream_ciphers.level1()
 
-@app.route("/len_extension", methods=['GET'])
-def len_extension():
-	return challenges.signatures.length_extension()
+@app.route("/padding_oracle/level1", methods=['GET', 'POST'])
+def padding_oracle_level1():
+	return challenges.padding_oracles.level1()
+
+@app.route("/padding_oracle/level2", methods=['GET', 'POST'])
+def padding_oracle_level2():
+	return challenges.padding_oracles.level2()
+
+@app.route("/digital_signatures/level1", methods=['GET'])
+def digital_signatures_level1():
+	return challenges.signatures.level1()
 
 if __name__ == '__main__':
     addr = sys.argv[1] if len(sys.argv) > 1 else '127.0.0.1'
